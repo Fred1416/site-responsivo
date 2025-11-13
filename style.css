@@ -1,0 +1,169 @@
+/*
+/* Seletor Universal: Aplica estas regras a TODOS os elementos da página */
+* {
+    margin: 0; /* Remove a margem externa padrão dos elementos */
+    padding: 0; /* Remove o espaçamento interno padrão dos elementos */
+    box-sizing: border-box; /* Faz com que padding e border não aumentem o tamanho total do elemento */
+    font-family: "Oswald", sans-serif; /* Define a fonte padrão para todos os textos */
+    font-weight: 400; /* Define o peso (espessura) da fonte como normal */
+    color: #505070; /* Define a cor padrão do texto */
+}
+
+/* Estiliza o container principal que envolve toda a página */
+.container {
+    height: 100vh; /* Define a altura para ser 100% da altura da tela (viewport height) */
+    width: 100vw; /* Define a largura para ser 100% da largura da tela (viewport width) */
+    display: flex; /* Ativa o Flexbox para alinhar os filhos (.left-section e .right-section) lado a lado */
+    justify-content: center; /* Centraliza os itens no eixo principal (horizontalmente) */
+    align-items: center; /* Centraliza os itens no eixo secundário (verticalmente) */
+}
+
+/* Estiliza a seção da esquerda (com o texto principal) */
+ .left-section {
+    width: 60%; /* Define a largura como 60% do elemento pai (.container) */
+    padding-left: 135px; /* Adiciona um espaçamento interno à esquerda */
+ }
+
+/* Estiliza a seção da direita (com o menu e a imagem) */
+ .right-section {
+    background-color: rgba(93, 93,125, 0.16); /* Define uma cor de fundo com transparência */
+    height: 100vh; /* Define a altura para 100% da altura da tela */
+    width: 40%; /* Define a largura como 40% do elemento pai */
+    display: flex; /* Ativa o Flexbox para alinhar os itens internos (header e img) */
+    flex-direction: column; /* Alinha os itens internos um abaixo do outro (em coluna) */
+    align-items: center; /* Centraliza os itens internos horizontalmente */
+}
+
+/* Estiliza a imagem */
+img {
+    margin-top: 170px; /* Cria um espaço entre o header e a imagem */
+}
+
+/* Estiliza o título principal */
+h1 {
+    font-size: 70px; /* Tamanho da fonte */
+    line-height: 80px; /* Altura da linha (espaçamento entre linhas) */
+    width: 368px; /* Largura fixa para o título */
+}
+
+/* Estiliza o parágrafo */
+p {
+    font-size: 28px; /* Tamanho da fonte */
+    line-height: 48px; /* Altura da linha */
+    opacity: 0.6; /* Deixa o texto um pouco transparente */
+    width: 540px; /* Largura fixa para o parágrafo */
+}
+
+/* Estiliza o botão */
+button {
+    width: 269px; /* Largura */
+    height: 62px; /* Altura */
+    background: #9499EA; /* Cor de fundo */
+    box-shadow: 0px 10px 24px rgba(148, 153, 234, 0.0979998); /* Sombra do botão */
+    border: none; /* Remove a borda */
+    border-radius: 30px; /* Arredonda as bordas */
+    font-size: 24px; /* Tamanho da fonte */
+    line-height: 36px; /* Altura da linha */
+    text-align: center; /* Alinha o texto ao centro */
+    color: #FFFF; /* Cor do texto (branco) */
+    cursor: pointer; /* Muda o cursor para uma "mãozinha" ao passar por cima */
+    margin-top: 20px; /* Margem no topo */
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+button:hover {
+    opacity: .8; /* Reduz a opacidade */
+}
+
+/* Efeito ao clicar no botão */
+button:active {
+    opacity: .5; /* Reduz ainda mais a opacidade */
+}
+
+/* Estiliza os links do menu */
+a {
+    font-size: 28px; /* Tamanho da fonte */
+    line-height: 41px; /* Altura da linha */
+    color: #505070; /* Cor do texto */
+    margin-left: 40px; /* Margem à esquerda para espaçar os links */
+    cursor: pointer; /* Cursor de "mãozinha" */
+}
+
+/* Estiliza o segundo link (filho) do menu */
+a:nth-child(2){
+    opacity: 0.4; /* Deixa o segundo link um pouco transparente */
+}
+
+/* Efeito ao passar o mouse sobre o link */
+a:hover {
+    opacity: 0.4; /* Reduz a opacidade */
+}
+
+/* Efeito ao clicar no link */
+a:active {
+    opacity: 0.8; /* Aumenta a opacidade */
+}
+
+/* Estiliza o cabeçalho (header) */
+header {
+    margin: 24px 0 0 57px; /* Define as margens (topo, direita, baixo, esquerda) */
+}
+
+/* Media Query: Aplica as regras abaixo APENAS em telas com largura máxima de 900px */
+@media screen and (max-width: 900px) {
+    /* Estiliza o container principal em telas menores */
+    .container {
+        flex-direction: column; /* Muda a direção do flex para empilhar os itens */
+    }
+    /* Estiliza a seção da esquerda em telas menores */
+    .left-section {
+        width: 100%; /* Ocupa toda a largura da tela */
+        height: 50%; /* Ocupa metade da altura da tela */
+        padding: 0; /* Remove o espaçamento interno */
+        margin: 0; /* Remove a margem externa */
+        text-align: center; /* Centraliza todo o texto da seção esquerda */
+    }
+    /* Estiliza a seção da direita em telas menores */
+    .right-section {
+        display: block; /* Faz o elemento se comportar como um bloco padrão */
+        height: auto; /* A altura se ajusta ao conteúdo */
+        position: static; /* Devolve o elemento ao fluxo normal da página */
+        padding: 40px; /* Adiciona espaçamento interno */
+    }
+
+    /* Estiliza a imagem em telas menores */
+    img {
+        position: static; /* Devolve a imagem ao fluxo normal */
+        max-width: 80%; /* A largura máxima será 80% do container pai */
+        margin: 0 auto; /* Centraliza a imagem */
+    }
+
+    /* Estiliza o cabeçalho em telas menores */
+    header {
+        display: none; /* Esconde o menu de navegação */
+    }
+
+    /* Estiliza o título em telas menores */
+    h1 {
+        font-size: 36px; /* Diminui o tamanho da fonte */
+        line-height: 52px; /* Ajusta a altura da linha */
+        width: auto; /* A largura se ajusta ao conteúdo */
+        margin: 58px 50px 0 50px; /* Ajusta as margens */
+        text-align: center; /* Garante a centralização do texto */
+    }
+
+    /* Estiliza o parágrafo em telas menores */
+    p {
+        margin: 15px 40px; /* Ajusta as margens */
+        width: auto; /* A largura se ajusta ao conteúdo */
+        text-align: center; /* Garante a centralização do texto */
+        font-size: 14px; /* Diminui o tamanho da fonte */
+        line-height: 24px; /* Ajusta a altura da linha */
+    }
+
+    /* Estiliza o botão em telas menores */
+    button {
+        margin: 0 auto; /* Centraliza o botão horizontalmente */
+        display: block; /* Faz o botão ocupar sua própria linha */
+    }
+}
